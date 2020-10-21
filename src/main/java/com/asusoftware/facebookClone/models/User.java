@@ -24,6 +24,10 @@ public class User {
     @JsonProperty("id") // forza la produzione di questo campo
     private Long id;
 
+    @Column(name = "profile_picture")
+    @NotNull
+    private String profileImage;
+
     @Column(name = "first_name")
     @NotNull
     private String name;
@@ -55,6 +59,8 @@ public class User {
     // mappedBy... Indica che non deve crearsi questa tabella perchè lo fa già la tabella Ad
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // un user a molti annunci, mappedBy si riferisce al field dove e stata fatta la foreinKey
     private List<Post> post;
+
+    // mappedBy = 'user' si riferisce all'instanza del Post Model che si occupera di aggiungere un campo con id del user
 
 
 }

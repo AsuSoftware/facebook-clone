@@ -11,6 +11,7 @@ import java.util.Date;
 public class UserDTO {
 
     private Long id;
+    private String profileImage;
     private String name;
     private String lastName;
     private Date birthday;

@@ -78,6 +78,7 @@ public class UserServiceImpl implements CreateUserService, UpdateUserService, Fi
     private UserDTO convertUserInDto(User user) {
         UserDTO userDto = new UserDTO();
         userDto.setId(user.getId());
+        userDto.setProfileImage(user.getProfileImage());
         userDto.setName(user.getName());
         userDto.setLastName(user.getLastName());
         userDto.setBirthday(user.getBirthday());
@@ -89,6 +90,7 @@ public class UserServiceImpl implements CreateUserService, UpdateUserService, Fi
     private User convertUserDtoInEntity(UserDTO userDto) {
         User user = new User();
         user.setName(userDto.getName());
+        user.setProfileImage(userDto.getProfileImage());
         user.setLastName(userDto.getLastName());
         user.setGender(userDto.getGender());
         user.setBirthday(userDto.getBirthday());

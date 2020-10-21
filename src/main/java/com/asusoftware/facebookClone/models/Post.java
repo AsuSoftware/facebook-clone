@@ -35,8 +35,8 @@ public class Post {
     private String privacy; // if is a electronics, or a book
 
     // responsabile per il collegamento alla tabella User con Ad tramite id
-    @ManyToOne // molti annunci su uno user
-    @JoinColumn(name = "user_id")
+    @ManyToOne // molti annunci su uno user (manyToOne e responsabile pr la creazione di una colonna from user table)
+    @JoinColumn(name = "users_id") // specifica la colonna che si va ad inserire nel Table post
     private User user;
 
     // mappedBy indica che questa Entità non e responsabile per la relazione, bensi lo e l'altra entità

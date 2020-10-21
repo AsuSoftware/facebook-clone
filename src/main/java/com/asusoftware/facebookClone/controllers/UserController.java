@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin("*") // Abilitazione delle CORS - Cross Origin Resource Sharing
-@RequestMapping("/user")
+@RequestMapping("/api/users")
 public class UserController {
 
     private final UserServiceImpl userService;

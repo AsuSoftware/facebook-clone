@@ -16,10 +16,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmailAndPassword(@Param(value = "email") String email, @Param(value = "password") String password);
 
     // return user with current ad id
-    @Query("SELECT p FROM Ad p WHERE p.id = :id")
+    @Query("SELECT p FROM Post p WHERE p.id = :id")
     Optional<Post> findPostById(@Param(value = "id") Long id);
 
     // return all ads
-    @Query("SELECT p.ads FROM User p")
+    @Query("SELECT p.post FROM User p")
     Optional<Post> getAllPosts();
 }

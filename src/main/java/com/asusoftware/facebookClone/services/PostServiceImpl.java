@@ -2,6 +2,7 @@ package com.asusoftware.facebookClone.services;
 
 import com.asusoftware.facebookClone.dto.ImageDTO;
 import com.asusoftware.facebookClone.dto.PostDTO;
+import com.asusoftware.facebookClone.dto.UserDTO;
 import com.asusoftware.facebookClone.exceptions.NotFoundPostException;
 import com.asusoftware.facebookClone.exceptions.NotFoundUserException;
 import com.asusoftware.facebookClone.models.Image;
@@ -85,7 +86,20 @@ public class PostServiceImpl implements CreatePostService, UpdatePostService, Fi
         postDto.setLikes(post.getLikes());
         postDto.setPostDate(post.getPostDate());
         postDto.setPrivacy(post.getPrivacy());
+        postDto.setUser(convertUserInDto(post.getUser()));
         return postDto;
+    }
+
+    private UserDTO convertUserInDto(User user) {
+        UserDTO userDto = new UserDTO();
+        userDto.setId(user.getId());
+        userDto.setProfileImage(user.getProfileImage());
+        userDto.setName(user.getName());
+        userDto.setLastName(user.getLastName());
+        userDto.setBirthday(user.getBirthday());
+        userDto.setGender(user.getGender());
+        userDto.setEmail(user.getEmail());
+        return userDto;
     }
 
 

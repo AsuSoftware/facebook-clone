@@ -18,6 +18,5 @@ public class PostDTO {
     private Long likes;
     private Date postDate;
     private String privacy;
-
-
+    private UserDTO user;
 }
